@@ -1,12 +1,27 @@
 import { useState } from 'react';
 
+// import { useNavigate } from 'react-router-dom';
+
 import './App.css';
+import AppRoutes from './routes';
 import reactLogo from '/react.svg';
 import viteLogo from '/vite.svg';
 
 function App() {
+  //   const navigate = useNavigate();
   const [count, setCount] = useState(0);
+  const [start, setStart] = useState(false);
 
+  //   const goToLanding = () => {
+  //     navigate('/');
+  //   };
+
+  const goToLanding2 = () => {
+    setStart(true);
+  };
+  if (start) {
+    return <AppRoutes />;
+  }
   return (
     <>
       <div>
@@ -25,6 +40,8 @@ function App() {
         </p>
       </div>
       <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
+      {/* <button onClick={goToLanding}>페이지 시작하기!</button> */}
+      <button onClick={goToLanding2}>페이지 시작하기!2</button>
     </>
   );
 }
